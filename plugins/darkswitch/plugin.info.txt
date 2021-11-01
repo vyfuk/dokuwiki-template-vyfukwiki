@@ -1,0 +1,7 @@
+base   darkswitch
+author
+email
+date
+name   test2 plugin
+desc
+url

@@ -1,0 +1,4 @@
+base     darktpl
+date     2021-10-16
+name     Dark dokuwiki template
+desc     Dark dokuwiki template

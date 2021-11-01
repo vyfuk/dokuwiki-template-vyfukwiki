@@ -1,0 +1,19 @@
+:root{
+    --text:#333;
+    --background:#fff;
+    --text_alt:#999;
+    --background_alt:#eee;
+    --text_neu:#666;
+    --background_neu:#ddd;
+    --border:#ccc;
+    --highlight:#ff9;
+    --link:#2b73b7;
+    --background_site:#fbfaf9;
+    --existing:#080;
+    --missing:#d30;
+    --site_width:75em;
+    --sidebar_width:16em;
+    --tablet_width:800px;
+    --phone_width:480px;
+    --theme_color:#008800;
+}
