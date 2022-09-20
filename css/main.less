@@ -1,0 +1,360 @@
+//obecne
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+html,
+body {
+    color: @ini_text;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font: normal 87.5%/1.4 Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    background-color: @ini_background;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    padding: 0;
+    line-height: 1.2;
+    clear: both;
+}
+
+h1 {
+    font-size: 2em;
+    margin: 0 0 0.444em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin: 0 0 0.666em;
+}
+
+h3 {
+    font-size: 1.125em;
+    margin: 0 0 0.888em;
+}
+
+h4 {
+    font-size: 1em;
+    margin: 0 0 1.0em;
+}
+
+h5 {
+    font-size: .875em;
+    margin: 0 0 1.1428em;
+}
+
+h6 {
+    font-size: .75em;
+    margin: 0 0 1.333em;
+}
+
+[disabled] {
+    cursor: auto;
+    opacity: .5;
+}
+
+a,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: @ini_link;
+    outline: none;
+}
+
+a:link:hover,
+a:visited:hover,
+a:link:focus,
+a:visited:focus,
+a:link:active,
+a:visited:active {
+    text-decoration: underline;
+}
+
+a.wikilink1 {
+    color: @ini_existing;
+}
+
+a.wikilink2 {
+    color: @ini_missing;
+}
+
+li {
+    margin-right: .5em;
+}
+
+.secedit {
+    margin-top: -35px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    position: relative;
+    width: fit-content;
+
+    button {
+        background-color: @ini_background;
+        border-width: 1px;
+        border-style: solid;
+        border-color: @ini_border;
+        border-radius: 2px;
+        color: @ini_text;
+    }
+}
+
+.site {
+    margin: auto;
+    max-width: @ini_site_width;
+    margin-top: 1.5em
+}
+
+//header
+#dokuwiki__header {
+    padding: 2em 0 1.5em;
+
+    .headings {
+        width: 49%;
+        margin-bottom: 1em;
+        float: left;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 1.5em;
+        font-weight: normal;
+
+        img {
+            float: left;
+            margin-right: .5em;
+        }
+
+        span {
+            display: block;
+            padding-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: @ini_text;
+        }
+    }
+
+    p.claim {
+        margin-bottom: 0;
+        font-size: 0.875em;
+    }
+}
+
+
+#dokuwiki__sitetools {
+    width: 40%;
+    display: block;
+    position: relative;
+    padding-right: 10px;
+    float: right;
+    text-align: right;
+    right: 0px;
+
+    #qsearch__out {
+        display: none;
+        right: 0px;
+        margin-top: 2.5em;
+    }
+
+    ul.toptools {
+        list-style: none;
+
+        li {
+            display: inline-block;
+            width: fit-content;
+        }
+    }
+
+    form.search {
+        display: block;
+        position: relative;
+        margin-bottom: 0.5em;
+
+        input {
+            width: 18em;
+            padding: .35em 22px .35em .1em;
+            background-color: @ini_background;
+            border-style: solid;
+            border-color: @ini_border;
+            border-width: 1px;
+            border-radius: 2px;
+        }
+
+        button {
+            background: transparent url(images/search.png) no-repeat 0 0;
+            border-width: 0;
+            width: 19px;
+            height: 14px;
+            text-indent: -99999px;
+            margin-left: -20px;
+            box-shadow: none;
+            padding: 0;
+        }
+    }
+}
+
+// highlight selected tool
+.mode_admin .action.admin a,
+.mode_login .action.login a,
+.mode_register .action.register a,
+.mode_profile .action.profile a,
+.mode_recent .action.recent a,
+.mode_index .action.index a,
+.mode_media .action.media a,
+.mode_revisions .action.revs a,
+.mode_backlink .action.backlink a,
+.mode_subscribe .action.subscribe a {
+    font-weight: bold;
+}
+
+div.breadcrumbs {
+    //border-top: 1px solid @ini_border;
+    //border-bottom: 1px solid @ini_background;
+    margin-bottom: .5em;
+    font-size: 0.875em;
+    clear: both;
+
+    div {
+        padding: .1em .35em;
+    }
+
+    div:first-child {
+        border-top: 1px solid @ini_border;
+    }
+
+    div:last-child {
+        border-bottom: 1px solid @ini_border;
+    }
+
+    .bcsep {
+        font-size: 0.75em;
+    }
+}
+
+#dokuwiki__usertools {
+    position: fixed;
+    display: block;
+    background-color: @ini_background_alt;
+    top: 0px;
+    left: auto;
+    right: auto;
+    padding-left: 500%;
+    margin-left: -500%;
+    padding-right: 500%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    text-align: right;
+    width: 100%;
+    max-width: @ini_site_width;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        max-width: @ini_site_width;
+        list-style: none;
+    }
+
+    li {
+        display: inline-flex;
+        flex-direction: row-reverse;
+        flex-wrap: nowrap;
+        vertical-align: middle;
+
+        a {
+            text-decoration: none;
+            vertical-align: middle;
+
+            svg {
+                margin-left: 5px;
+                margin-right: 5px;
+                height: 1.4em;
+                width: 1.4em;
+                vertical-align: middle;
+                fill: @ini_link;
+                margin-right: 0.2em;
+            }
+
+            span {
+                display: inline-block;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    li a:hover,
+    li a:active {
+        text-decoration: none;
+    }
+}
+
+//content
+.page {
+    clear: both;
+    background: @ini_background;
+    color: @ini_text;
+    border: none;
+    padding: 1.556em 2em 2em;
+    margin-bottom: .5em;
+    overflow: hidden;
+    word-wrap: break-word;
+
+    table {
+        border-collapse: collapse;
+        empty-cells: show;
+        border-spacing: 0;
+
+        th {
+            font-weight: bold;
+            background-color: @ini_background;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 0.3em 0.5em;
+            margin: 0px;
+            vertical-align: top;
+            border: 1px solid @ini_border;
+        }
+    }
+
+    .footnotes {
+        display: block;
+        border: 0px;
+        border-top: 1px;
+        border-style: solid;
+        border-color: @ini_border;
+
+        .fn {
+            display: block;
+            width: 100%;
+
+            .content {
+                display: inline;
+            }
+        }
+    }
+}
+
+.section_highlight {
+    background-color: @ini_background_alt;
+}
+
+//footer
+.docInfo {
+    font-size: 0.875em;
+    text-align: right;
+}

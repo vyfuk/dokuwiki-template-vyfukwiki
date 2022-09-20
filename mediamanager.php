@@ -13,17 +13,16 @@ header('X-UA-Compatible: IE=edge,chrome=1');
 <html lang="<?php echo $conf['lang']?>" dir="<?php echo $lang['direction'] ?>" class="popup no-js">
 <head>
     <meta charset="utf-8" />
-    <title>
-        <?php echo hsc($lang['mediaselect'])?>
-        [<?php echo strip_tags($conf['title'])?>]
-    </title>
+    <title><?php echo (hsc($lang['mediaselect'])."[".strip_tags($conf['title'])."]"?></title>
     <script>(function(H){H.className=H.className.replace(/\bno-js\b/,'js')})(document.documentElement)</script>
-    <?php tpl_metaheaders()?>
+    <?php
+    if(get_doku_pref("darkmode", 0)==1)echo '<link rel="stylesheet" type="text/css" href="/lib/tpl/vyfukwiki/css/dark.css"/>';
+    else echo '<link rel="stylesheet" type="text/css" href="/lib/tpl/vyfukwiki/css/dark_not.css"/>';
+    tpl_metaheaders()
+    ?>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <?php echo tpl_favicon(array('favicon', 'mobile')) ?>
-    <?php tpl_includeFile('meta.html') ?>
+    <link rel="shortcut icon" href="/lib/tpl/vyfukwiki/images/vyfuk.ico" />
 </head>
-
 <body>
     <div id="media__manager" class="dokuwiki">
         <?php html_msgarea() ?>
